@@ -13,3 +13,5 @@ __pycache__/
 
 # env-файлы с секретами
 .env
+
+db.sqlite3

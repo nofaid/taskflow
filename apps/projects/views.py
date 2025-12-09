@@ -3,6 +3,7 @@ from rest_framework.permissions import IsAuthenticated
 
 from .models import Project
 from .serializers import ProjectSerializer
+from .services import create_project_for_user
 
 # Create your views here.
 
@@ -27,6 +28,6 @@ class ProjectViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         """
-        При создании автоматически проставляем владельца
+        При создании используем сервисный слой
         """
-        serializer.save(owner=self.request.user)
+        create_project_for_user(user=self.request.user, data=serializer.validated_data)

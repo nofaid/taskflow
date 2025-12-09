@@ -7,3 +7,5 @@ python-dotenv==1.2.1
 sqlparse==0.5.4
 djangorestframework-simplejwt
 django-filter
+drf-spectacular
+drf-spectacular-sidecar

@@ -14,6 +14,11 @@ class ProjectViewSet(viewsets.ModelViewSet):
     serializer_class = ProjectSerializer
     permission_classes = [IsAuthenticated]
 
+    filterset_fields = ["name"] # Фильтрация по имени
+    search_fields = ["name", "description"] # фильтрация по полям
+    ordering_fields = ["name", "created_at"] # сортировка по имени и дате создания
+    ordering = ["-created_at"] # по умолчанию сортировка по дате создания
+
     def get_queryset(self):
         """
         Возвращает только проекты текущего пользователя

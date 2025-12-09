@@ -21,7 +21,7 @@ class Project(models.Model):
     updated_at = models.DateTimeField("Обновлено", auto_now=True)
 
     class Meta:
-        verbose_name = "Владелец",
+        verbose_name = "Проект",
         verbose_name_plural = "Проекты",
         ordering=("-created_at",)
 

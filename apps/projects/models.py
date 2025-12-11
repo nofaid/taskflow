@@ -21,9 +21,9 @@ class Project(models.Model):
     updated_at = models.DateTimeField("Обновлено", auto_now=True)
 
     class Meta:
-        verbose_name = "Проект",
-        verbose_name_plural = "Проекты",
-        ordering=("-created_at",)
+        verbose_name = 'Проект',
+        verbose_name_plural = 'Проекты',
+        ordering=["-created_at"]
 
     def __str__(self):
         return self.name
